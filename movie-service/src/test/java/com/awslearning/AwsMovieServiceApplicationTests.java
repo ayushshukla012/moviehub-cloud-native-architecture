@@ -1,19 +1,29 @@
 package com.awslearning;
 
+
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.context.annotation.Import;
+import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.RequestEntity;
+
+import java.net.URI;
+import java.util.List;
+
+import com.awslearning.domain.Genre;
+import com.awslearning.dto.MovieDto;
 
 @Import(TestcontainersConfiguration.class)
-@SpringBootTest
-        //(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class AwsMovieServiceApplicationTests {
 
-    @Test
-    void contextLoads() {
-        // This method is intentionally left empty to ensure the application context loads successfully.
-    }
-/*    private static final Logger log = (Logger) LoggerFactory.getLogger(AwsMovieServiceApplicationTests.class);
+    private static final Logger log = (Logger) LoggerFactory.getLogger(AwsMovieServiceApplicationTests.class);
 
     @Autowired
     private TestRestTemplate template;
@@ -23,7 +33,7 @@ class AwsMovieServiceApplicationTests {
         var responseEntity = this.template.getForEntity("/actuator/health", Object.class);
         Assertions.assertTrue(responseEntity.getStatusCode().is2xxSuccessful());
     }
-	
+
     @Test
     void allMovies() {
         var movies = getMovies("/api/movies");
@@ -45,6 +55,6 @@ class AwsMovieServiceApplicationTests {
         log.info("response: {}" + responseEntity.getBody());
         Assertions.assertNotNull(responseEntity.getBody());
         return responseEntity.getBody();
-    }*/
+    }
 
 }

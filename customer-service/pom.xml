@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.awslearning</groupId>
-	<artifactId>aws-movie-service</artifactId>
+	<artifactId>aws-customer-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>aws-movie-service</name>
-	<description>Demo project for Aws Learning</description>
+	<name>aws-customer-service</name>
+	<description>Demo project for Aws Learning- Customer Service</description>
 	<url/>
 	<licenses>
 		<license/>
